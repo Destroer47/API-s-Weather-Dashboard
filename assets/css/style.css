@@ -1,0 +1,28 @@
+label {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#header {
+    width: 100%;
+    background-image: linear-gradient(to right, #0080FF, darkblue);
+    display: flex;
+    height: 40px;
+}
+
+#header-text {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 28px;
+}
+
+#city-name {
+    margin-top: 10px;
+}
+
+#search-button {
+    margin-top: 10px;
+}
