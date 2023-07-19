@@ -11,7 +11,6 @@ let citySearchVal
 
 function searchCity(event) {
     event.preventDefault();
-    console.log(citySearchVal);
     citySearchVal = citySearchForm.value.trim();
 
     if (!citySearchVal) {
@@ -27,23 +26,17 @@ function searchCity(event) {
 }
 
 function getCoordinates(citySearchVal) {
-    console.log(citySearchVal);
-    let geocodeApi = "http://api.openweathermap.org/geo/1.0/direct?q=" + citySearchVal + "&appid=" + apiKey;
+    let geocodeApi = "https://api.openweathermap.org/geo/1.0/direct?q=" + citySearchVal + "&appid=" + apiKey;
 
     fetch(geocodeApi)
         .then(function (response) {
             if (response.ok) {
-                console.log(response);
                 response.json().then(function (data) {
-                    console.log(data);
                     let lat = data[0].lat
                     let lon = data[0].lon
-                    console.log(lat);
-                    console.log(lon);
                     getCurrentWeather(lat, lon);
                     get5DayForecast(lat, lon);
                     citySearchVal = null;
-                    console.log(citySearchVal);
                 });
             } else {
             alert('Error: ' + response.statusText);
@@ -60,9 +53,7 @@ function getCurrentWeather(lat, lon) {
     fetch(currentWeatherApi)
         .then(function (response) {
             if (response.ok) {
-                console.log(response);
                 response.json().then(function (data) {
-                    console.log(data);
                     displayCurrentWeather(data);
                 })
             } else {
@@ -80,9 +71,7 @@ function get5DayForecast(lat, lon) {
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
-                console.log(response);
                 response.json().then(function (data2) {
-                    console.log(data2);
                     display5DayForecast(data2);
                 })
             } else {
@@ -117,7 +106,6 @@ function displayCurrentWeather(data) {
 
 function display5DayForecast(data2) {
     let forecastData = data2.list.filter(item => item.dt_txt.includes("12:00:00"));
-    console.log(forecastData);
     for (let i=0; i < forecastData.length; i++) {
         let weatherIcon = forecastData[i].weather[0].icon
         let iconUrl = "https://openweathermap.org/img/wn/" + weatherIcon + ".png";
