@@ -1,6 +1,28 @@
+main {
+    margin: 10px;
+}
+
 label {
     font-weight: bold;
     font-size: 20px;
+}
+
+.weather-icon {
+    width: 40px;
+    height: 40px;
+}
+
+.forecast-card {
+    margin: 20px;
+    margin-top: 5px;
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #151E3D;
+    color: white;
+    width: 20%;
+    height: 200px;
 }
 
 #header {
@@ -25,4 +47,18 @@ label {
 
 #search-button {
     margin-top: 10px;
+}
+
+#city-date {
+    font-size: 22px;
+}
+
+#city-box {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#forecast-cards {
+    display: flex;
 }

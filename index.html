@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
@@ -21,6 +26,20 @@
             <input type="text" id="city-name" name="city-name" placeholder="Columbus"><br>
             <button id="search-button">Search</button>
         </form>
+
+        <div id="search-results">
+            <div id="city-box">
+                <h2 id="city-date"></h2><br>
+            </div>
+            <p id="city-temp"></p><br>
+            <p id="city-wind"></p><br>
+            <p id="city-humidity"></p><br>
+        </div>
+
+        <div id="5-day-forecast">
+            <h3>5-Day Forecast:</h3><br>
+            <div id="forecast-cards"></div>
+        </div>
 
     </main>
     <script src="./assets/js/script.js"></script>
