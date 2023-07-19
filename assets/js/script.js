@@ -116,7 +116,7 @@ function displayCurrentWeather(data) {
 }
 
 function display5DayForecast(data2) {
-    const forecastData = data2.list.filter(item => item.dt_txt.includes("12:00:00"));
+    let forecastData = data2.list.filter(item => item.dt_txt.includes("12:00:00"));
     console.log(forecastData);
     for (let i=0; i < forecastData.length; i++) {
         let weatherIcon = forecastData[i].weather[0].icon
